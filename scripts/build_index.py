@@ -21,7 +21,6 @@ SECTION_RE = re.compile(r"^##\s+\d+\.\s+(.+?)\s*$")
 QUESTION_RE = re.compile(
     r"^- \[(?P<checked>[ xX])\]\s+`(?P<id>[A-Z]{2,5}-\d{3})`\s+(?P<rest>.+?)\s*$"
 )
-LEADING_TAG_RE = re.compile(r"^`([^`]+)`\s*")
 ANSWER_RE = re.compile(r"^## 我的答案\s*$\n(?P<body>.*?)(?=^##\s|\Z)", re.MULTILINE | re.DOTALL)
 HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
 AUTO_QUESTION_RE = re.compile(
@@ -34,7 +33,6 @@ AUTO_QUESTION_RE = re.compile(
 class Question:
     question_id: str
     text: str
-    tags: tuple[str, ...]
     section: str
     bank_title: str
     source: Path
@@ -70,17 +68,10 @@ def parse_bank(path: Path) -> tuple[str, list[Question]]:
         if not question_match:
             continue
 
-        rest = question_match.group("rest")
-        tags: list[str] = []
-        while tag_match := LEADING_TAG_RE.match(rest):
-            tags.append(tag_match.group(1))
-            rest = rest[tag_match.end() :]
-
         questions.append(
             Question(
                 question_id=question_match.group("id"),
-                text=rest.strip(),
-                tags=tuple(tags),
+                text=question_match.group("rest").strip(),
                 section=section,
                 bank_title=bank_title,
                 source=path,
@@ -94,12 +85,11 @@ def parse_bank(path: Path) -> tuple[str, list[Question]]:
 
 def managed_question_block(question: Question) -> str:
     source = question.source.relative_to(ROOT).as_posix()
-    tags = " · ".join(question.tags) if question.tags else "无"
     return (
         "<!-- AUTO-QUESTION:START -->\n"
         f"> **问题：** {question.text}\n"
         ">\n"
-        f"> **分类：** {question.section} · {tags}\n"
+        f"> **分类：** {question.section}\n"
         ">\n"
         f"> **来源：** [{source}](../../{source})\n"
         "<!-- AUTO-QUESTION:END -->"
@@ -199,11 +189,9 @@ def build_index(
                 )
 
             checked = "x" if has_answer(answer_contents[question.question_id]) else " "
-            tags = " ".join(f"`{tag}`" for tag in question.tags)
-            suffix = f" {tags}" if tags else ""
             lines.append(
                 f"- [{checked}] [{question.question_id} · {question.text}]"
-                f"({relative_answer_link(question)}){suffix}"
+                f"({relative_answer_link(question)})"
             )
         lines.append("")
 
