@@ -1,0 +1,36 @@
+name: Update knowledge index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "INTERVIEW_QUESTIONS_AGENT_HARNESS_EXPANDED.md"
+      - "ENGINEERING_FOUNDATIONS_PATCH.md"
+      - "answers/**/*.md"
+      - "scripts/build_index.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Generate answer notes and index
+        run: python3 scripts/build_index.py
+
+      - name: Commit generated files
+        run: |
+          if [ -z "$(git status --porcelain -- INDEX.md answers)" ]; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add INDEX.md answers
+          git commit -m "docs: update knowledge index"
+          git push
