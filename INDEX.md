@@ -3,7 +3,7 @@
 
 > 点击问题即可进入对应的答案笔记。填写“我的答案”后，下一次生成索引时会自动勾选。
 
-当前进度：**3 / 540**
+当前进度：**4 / 540**
 
 ## 题库导航
 
@@ -39,7 +39,7 @@
 - [x] [ARC-001 · 请完整描述原始 Transformer 的 Encoder、Decoder 及其数据流。](answers/arc/ARC-001.md)
 - [x] [ARC-002 · Transformer 相比 RNN、LSTM 的主要优势和代价是什么？](answers/arc/ARC-002.md)
 - [x] [ARC-003 · 请从矩阵形状出发推导 Scaled Dot-Product Attention 的完整计算过程。](answers/arc/ARC-003.md)
-- [ ] [ARC-004 · 为什么 Attention 的 logits 要除以 \(\sqrt{d_k}\)？如果不缩放会怎样？](answers/arc/ARC-004.md)
+- [x] [ARC-004 · 为什么 Attention 的 logits 要除以 \(\sqrt{d_k}\)？如果不缩放会怎样？](answers/arc/ARC-004.md)
 - [ ] [ARC-005 · Self-Attention 的时间复杂度、空间复杂度和主要瓶颈分别是什么？](answers/arc/ARC-005.md)
 - [ ] [ARC-006 · Multi-Head Attention 为什么比单头注意力更有表达能力？](answers/arc/ARC-006.md)
 - [ ] [ARC-007 · MHA、MQA、GQA 和 MLA 在参数、计算和 KV Cache 上有什么区别？](answers/arc/ARC-007.md)
