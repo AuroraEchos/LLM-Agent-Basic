@@ -3,7 +3,7 @@
 
 > 点击问题即可进入对应的答案笔记。填写“我的答案”后，下一次生成索引时会自动勾选。
 
-当前进度：**5 / 540**
+当前进度：**6 / 540**
 
 ## 题库导航
 
@@ -64,7 +64,7 @@
 - [ ] [ARC-026 · 局部注意力、滑动窗口注意力、稀疏注意力和线性注意力分别解决什么问题？](answers/arc/ARC-026.md)
 - [ ] [ARC-027 · 训练时的 Teacher Forcing 与推理时的自回归生成为什么会产生 Exposure Bias？](answers/arc/ARC-027.md)
 - [ ] [ARC-028 · 为什么扩大模型宽度、深度、头数会带来不同的性能和训练稳定性影响？](answers/arc/ARC-028.md)
-- [ ] [ARC-029 · 如何估算一个 Decoder-Only Transformer 的参数量？](answers/arc/ARC-029.md)
+- [x] [ARC-029 · 如何估算一个 Decoder-Only Transformer 的参数量？](answers/arc/ARC-029.md)
 - [ ] [ARC-030 · 如何估算 Transformer 单次前向、训练一步和生成一个 token 的 FLOPs？](answers/arc/ARC-030.md)
 <a id="bank-1-section-3"></a>
 ### Tokenizer、数据与预训练
