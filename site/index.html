@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f1e8" />
+    <meta
+      name="description"
+      content="涵盖 LLM、Agent 与工程基础的 540 道面试题，用主动回忆建立真正能说出口的知识体系。"
+    />
+    <meta property="og:title" content="LLM 面试备忘录" />
+    <meta property="og:description" content="540 道 LLM、Agent 与工程基础面试题，随时开始主动回忆。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://auroraechos.github.io/LLM-Agent-Basic/" />
+    <meta property="og:image" content="https://auroraechos.github.io/LLM-Agent-Basic/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LLM 面试备忘录" />
+    <meta name="twitter:description" content="540 道 LLM、Agent 与工程基础面试题，随时开始主动回忆。" />
+    <meta name="twitter:image" content="https://auroraechos.github.io/LLM-Agent-Basic/assets/og.png" />
+    <link rel="canonical" href="https://auroraechos.github.io/LLM-Agent-Basic/" />
+    <title>LLM 面试备忘录</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+        options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+    <script type="module" src="./assets/app.js"></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div id="app" class="app-shell" aria-busy="true">
+      <header class="topbar">
+        <a class="brand" href="#/" aria-label="返回首页">
+          <span class="brand-mark">L/A</span>
+          <span class="brand-copy">
+            <strong>LLM 面试备忘录</strong>
+            <small>Learn · Recall · Articulate</small>
+          </span>
+        </a>
+        <div class="topbar-actions">
+          <button class="progress-chip" id="progress-chip" type="button" data-action="show-progress">
+            <span class="progress-dot"></span>
+            <span id="progress-label">0 / 540 已掌握</span>
+          </button>
+          <a class="icon-button desktop-only" href="https://github.com/AuroraEchos/LLM-Agent-Basic" target="_blank" rel="noreferrer" aria-label="在 GitHub 查看源代码">GH</a>
+          <button class="icon-button" id="theme-toggle" type="button" data-action="toggle-theme" aria-label="切换深浅色主题">◐</button>
+        </div>
+      </header>
+
+      <aside class="sidebar" id="sidebar">
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="search-input" type="search" placeholder="搜索题目、编号或领域…" autocomplete="off" />
+          <kbd>/</kbd>
+        </div>
+        <nav class="primary-nav" aria-label="主要导航">
+          <button class="nav-item active" type="button" data-route="home"><span>⌂</span>学习台</button>
+          <button class="nav-item" type="button" data-route="library"><span>▤</span>全部题目<small id="nav-total">540</small></button>
+          <button class="nav-item" type="button" data-filter="starred"><span>☆</span>我的收藏<small id="nav-starred">0</small></button>
+          <button class="nav-item" type="button" data-filter="unmastered"><span>◌</span>待掌握<small id="nav-unmastered">540</small></button>
+        </nav>
+
+        <div class="sidebar-heading"><span>知识领域</span><button id="clear-section" type="button">清除</button></div>
+        <div class="section-nav" id="section-nav"></div>
+        <div class="sidebar-footer">
+          <p>知识源持续更新</p>
+          <a href="https://github.com/AuroraEchos/LLM-Agent-Basic" target="_blank" rel="noreferrer">在 GitHub 上共同完善 ↗</a>
+        </div>
+      </aside>
+
+      <main class="main" id="main-content" tabindex="-1">
+        <div class="loading-state">
+          <span class="loader"></span>
+          <p>正在整理你的知识卡片…</p>
+        </div>
+      </main>
+
+      <nav class="mobile-nav" aria-label="移动端导航">
+        <button type="button" data-route="home"><span>⌂</span>学习</button>
+        <button type="button" data-route="library"><span>▤</span>题库</button>
+        <button type="button" data-action="random-question"><span>↝</span>随机</button>
+        <button type="button" data-action="show-progress"><span>◔</span>进度</button>
+      </nav>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
