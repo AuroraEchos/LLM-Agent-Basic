@@ -3,23 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f5f1e8" />
-    <meta
-      name="description"
-      content="120 道高频 LLM 与 Agent 核心面试题，用主动回忆建立真正能说出口的知识体系。"
-    />
-    <meta property="og:title" content="LLM 面试备忘录" />
-    <meta property="og:description" content="120 道高频 LLM 与 Agent 核心面试题，随时开始主动回忆。" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="120 道高频 LLM 与 Agent 核心面试题。像读一份简单的学术讲义一样复习、搜索与自测。" />
+    <meta property="og:title" content="LLM / Agent 面试笔记" />
+    <meta property="og:description" content="核心 120 题：Agent、RAG、评测与大模型工程。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://auroraechos.github.io/LLM-Agent-Basic/" />
     <meta property="og:image" content="https://auroraechos.github.io/LLM-Agent-Basic/assets/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="LLM 面试备忘录" />
-    <meta name="twitter:description" content="120 道高频 LLM 与 Agent 核心面试题，随时开始主动回忆。" />
+    <meta name="twitter:title" content="LLM / Agent 面试笔记" />
+    <meta name="twitter:description" content="核心 120 题：Agent、RAG、评测与大模型工程。" />
     <meta name="twitter:image" content="https://auroraechos.github.io/LLM-Agent-Basic/assets/og.png" />
     <link rel="canonical" href="https://auroraechos.github.io/LLM-Agent-Basic/" />
-    <title>LLM 面试备忘录</title>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <title>LLM / Agent 面试笔记</title>
     <link rel="stylesheet" href="./assets/styles.css" />
     <script>
       window.MathJax = {
@@ -31,61 +27,42 @@
     <script type="module" src="./assets/app.js"></script>
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <div id="app" class="app-shell" aria-busy="true">
-      <header class="topbar">
-        <a class="brand" href="#/" aria-label="返回首页">
-          <span class="brand-mark">L/A</span>
-          <span class="brand-copy">
-            <strong>LLM 面试备忘录</strong>
-            <small>Learn · Recall · Articulate</small>
-          </span>
-        </a>
-        <div class="topbar-actions">
-          <button class="progress-chip" id="progress-chip" type="button" data-action="show-progress">
-            <span class="progress-dot"></span>
-            <span id="progress-label">0 / 120 已掌握</span>
-          </button>
-          <a class="icon-button desktop-only" href="https://github.com/AuroraEchos/LLM-Agent-Basic" target="_blank" rel="noreferrer" aria-label="在 GitHub 查看源代码">GH</a>
-          <button class="icon-button" id="theme-toggle" type="button" data-action="toggle-theme" aria-label="切换深浅色主题">◐</button>
-        </div>
+    <div class="page">
+      <header class="site-header">
+        <h1><a href="#/">LLM / Agent Interview Notes</a></h1>
+        <p>面向算法与工程面试的核心 120 题。先自己回答，再看参考答案。</p>
+        <nav aria-label="主导航">
+          [<a href="#/">首页</a>]
+          [<a href="#/library">全部题目</a>]
+          [<a href="#/random" data-action="random-question">随机一题</a>]
+          [<a href="#/progress">学习进度</a>]
+          [<a href="https://github.com/AuroraEchos/LLM-Agent-Basic" target="_blank" rel="noreferrer">GitHub</a>]
+        </nav>
       </header>
 
-      <aside class="sidebar" id="sidebar">
-        <div class="search-wrap">
-          <span class="search-icon">⌕</span>
-          <input id="search-input" type="search" placeholder="搜索题目、编号或领域…" autocomplete="off" />
-          <kbd>/</kbd>
-        </div>
-        <nav class="primary-nav" aria-label="主要导航">
-          <button class="nav-item active" type="button" data-route="home"><span>⌂</span>学习台</button>
-          <button class="nav-item" type="button" data-route="library"><span>▤</span>全部题目<small id="nav-total">120</small></button>
-          <button class="nav-item" type="button" data-filter="starred"><span>☆</span>我的收藏<small id="nav-starred">0</small></button>
-          <button class="nav-item" type="button" data-filter="unmastered"><span>◌</span>待掌握<small id="nav-unmastered">120</small></button>
-        </nav>
+      <hr />
 
-        <div class="sidebar-heading"><span>知识领域</span><button id="clear-section" type="button">清除</button></div>
-        <div class="section-nav" id="section-nav"></div>
-        <div class="sidebar-footer">
-          <p>知识源持续更新</p>
-          <a href="https://github.com/AuroraEchos/LLM-Agent-Basic" target="_blank" rel="noreferrer">在 GitHub 上共同完善 ↗</a>
-        </div>
-      </aside>
+      <form class="search" id="search-form" role="search">
+        <label for="search-input">搜索题库：</label>
+        <input id="search-input" name="q" type="search" size="34" autocomplete="off" />
+        <button type="submit">搜索</button>
+        <span class="hint">按 <kbd>/</kbd> 聚焦</span>
+      </form>
 
-      <main class="main" id="main-content" tabindex="-1">
-        <div class="loading-state">
-          <span class="loader"></span>
-          <p>正在整理你的知识卡片…</p>
-        </div>
+      <main id="main-content" tabindex="-1" aria-busy="true">
+        <p>正在读取题库……</p>
       </main>
 
-      <nav class="mobile-nav" aria-label="移动端导航">
-        <button type="button" data-route="home"><span>⌂</span>学习</button>
-        <button type="button" data-route="library"><span>▤</span>题库</button>
-        <button type="button" data-action="random-question"><span>↝</span>随机</button>
-        <button type="button" data-action="show-progress"><span>◔</span>进度</button>
-      </nav>
+      <hr />
+
+      <footer>
+        <p>
+          本站无账号、无追踪；学习记录只保存在当前浏览器。
+          内容可在 <a href="https://github.com/AuroraEchos/LLM-Agent-Basic" target="_blank" rel="noreferrer">GitHub</a> 共同维护。
+        </p>
+        <p class="updated" id="updated-at"></p>
+      </footer>
     </div>
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <p class="notice" id="notice" role="status" aria-live="polite" hidden></p>
   </body>
 </html>
