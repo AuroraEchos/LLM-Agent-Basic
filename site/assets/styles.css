@@ -18,7 +18,7 @@ body {
 }
 
 .page {
-  width: min(100% - 32px, 900px);
+  width: min(100% - 32px, 840px);
   margin: 18px auto 40px;
 }
 
@@ -82,13 +82,57 @@ li { margin: 4px 0; }
   list-style: none;
 }
 
-.file-tree { font-family: "Courier New", Courier, "Songti SC", SimSun, monospace; }
-.file-tree > li { margin: 0 0 14px; }
-.file-tree > li > strong { font-size: 0.92rem; }
-.file-tree ul { margin-top: 3px; padding-left: 22px; }
-.file-tree ul li { margin: 2px 0; padding-left: 22px; text-indent: -22px; }
-.file-tree ul li::before { content: "├─ "; color: #777; }
-.file-tree ul li:last-child::before { content: "└─ "; }
+.file-tree > li { margin: 0 0 30px; }
+.file-tree > li > strong {
+  display: block;
+  padding: 0 4px 7px;
+  border-bottom: 1px solid #999;
+  font-size: 0.95rem;
+}
+
+.file-tree ul { margin-top: 7px; }
+.file-tree ul li { position: relative; margin: 1px 0; }
+.file-tree ul li::before {
+  content: "├─";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #aaa;
+  font: 0.75rem/1.5 "Courier New", Courier, monospace;
+}
+.file-tree ul li:last-child::before { content: "└─"; }
+
+.question-link {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 10px;
+  padding: 7px 10px 7px 31px;
+  border-left: 2px solid transparent;
+  line-height: 1.55;
+  text-decoration: none;
+}
+
+.question-link:hover,
+.question-link:focus-visible {
+  border-left-color: #a31f34;
+  background: #f2f2f2;
+  outline: none;
+}
+
+.question-link:hover .question-title,
+.question-link:focus-visible .question-title {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.question-id {
+  color: #666;
+  font: 0.78rem/1.8 "Courier New", Courier, monospace;
+  white-space: nowrap;
+}
+
+.question-title { min-width: 0; }
 
 .question-page > h2 { font-size: 1.4rem; }
 .pager { margin: 28px 0 4px; text-align: center; }
@@ -120,11 +164,13 @@ footer { font-size: 0.85rem; }
 
 @media (max-width: 600px) {
   html { font-size: 17px; }
-  .page { width: min(100% - 22px, 900px); margin-top: 12px; }
+  .page { width: min(100% - 22px, 840px); margin-top: 12px; }
   .search label { display: block; }
   .search input { width: 72%; max-width: none; }
-  .file-tree { font-size: 0.88rem; }
-  .file-tree ul { padding-left: 12px; }
+  .file-tree { font-size: 0.92rem; }
+  .file-tree > li { margin-bottom: 24px; }
+  .question-link { grid-template-columns: 70px minmax(0, 1fr); gap: 7px; padding: 7px 6px 7px 25px; }
+  .file-tree ul li::before { left: 4px; }
   table { font-size: 0.88rem; }
   th, td { padding: 4px; }
 }

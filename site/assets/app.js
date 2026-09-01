@@ -29,7 +29,7 @@ function questionTree(questions) {
     const items = questions.filter((question) => question.section === section.name);
     if (!items.length) return '';
     return `<li class="tree-directory"><strong>${escapeHtml(section.name)}/</strong>
-      <ul>${items.map((question) => `<li><a href="#/question/${question.id}">${question.id} — ${escapeHtml(question.title)}</a></li>`).join('')}</ul>
+      <ul>${items.map((question) => `<li><a class="question-link" href="#/question/${question.id}"><span class="question-id">${question.id}</span><span class="question-title">${escapeHtml(question.title)}</span></a></li>`).join('')}</ul>
     </li>`;
   }).join('')}</ul>`;
 }
