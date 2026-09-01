@@ -5,8 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "INTERVIEW_QUESTIONS_AGENT_HARNESS_EXPANDED.md"
-      - "ENGINEERING_FOUNDATIONS_PATCH.md"
+      - "CORE_INTERVIEW_QUESTIONS.md"
       - "answers/**/*.md"
       - "scripts/build_index.py"
   workflow_dispatch:

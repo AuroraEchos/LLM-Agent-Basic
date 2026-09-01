@@ -13,8 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_PATH = ROOT / "INDEX.md"
 QUESTION_BANKS = (
-    ROOT / "INTERVIEW_QUESTIONS_AGENT_HARNESS_EXPANDED.md",
-    ROOT / "ENGINEERING_FOUNDATIONS_PATCH.md",
+    ROOT / "CORE_INTERVIEW_QUESTIONS.md",
 )
 
 SECTION_RE = re.compile(r"^##\s+\d+\.\s+(.+?)\s*$")

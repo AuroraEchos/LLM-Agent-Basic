@@ -6,8 +6,7 @@ on:
       - main
     paths:
       - "answers/**/*.md"
-      - "INTERVIEW_QUESTIONS_AGENT_HARNESS_EXPANDED.md"
-      - "ENGINEERING_FOUNDATIONS_PATCH.md"
+      - "CORE_INTERVIEW_QUESTIONS.md"
       - "site/**"
       - "scripts/build_site.py"
       - "scripts/build_index.py"
