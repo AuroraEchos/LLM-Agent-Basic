@@ -106,33 +106,32 @@ li { margin: 4px 0; }
   display: grid;
   grid-template-columns: 78px minmax(0, 1fr);
   gap: 10px;
-  padding: 7px 10px 7px 31px;
-  border-left: 2px solid transparent;
+  padding: 5px 8px 5px 29px;
   line-height: 1.55;
   text-decoration: none;
 }
 
-.question-link:hover,
 .question-link:focus-visible {
-  border-left-color: #a31f34;
-  background: #f2f2f2;
-  outline: none;
+  outline: 1px dotted #999;
+  outline-offset: -1px;
 }
 
 .question-link:hover .question-title,
 .question-link:focus-visible .question-title {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  color: #0000ee;
+  text-decoration: none;
 }
 
 .question-id {
   color: #666;
-  font: 0.78rem/1.8 "Courier New", Courier, monospace;
+  font: 0.7rem/1.95 "Courier New", Courier, monospace;
   white-space: nowrap;
 }
 
-.question-title { min-width: 0; }
+.question-title {
+  min-width: 0;
+  font-size: 0.86rem;
+}
 
 .question-page > h2 { font-size: 1.4rem; }
 .pager { margin: 28px 0 4px; text-align: center; }
@@ -169,7 +168,8 @@ footer { font-size: 0.85rem; }
   .search input { width: 72%; max-width: none; }
   .file-tree { font-size: 0.92rem; }
   .file-tree > li { margin-bottom: 24px; }
-  .question-link { grid-template-columns: 70px minmax(0, 1fr); gap: 7px; padding: 7px 6px 7px 25px; }
+  .question-link { grid-template-columns: 66px minmax(0, 1fr); gap: 6px; padding: 5px 4px 5px 23px; }
+  .question-title { font-size: 0.84rem; }
   .file-tree ul li::before { left: 4px; }
   table { font-size: 0.88rem; }
   th, td { padding: 4px; }
