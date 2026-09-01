@@ -40,9 +40,6 @@ a:focus { color: #000; text-decoration: underline; }
   text-decoration: none;
 }
 
-.site-header > p { margin: 6px 0; }
-.site-header nav { margin-top: 12px; }
-
 hr {
   height: 0;
   margin: 18px 0;
@@ -52,7 +49,6 @@ hr {
 
 .search { margin: 0 0 22px; }
 .search input { max-width: 60%; }
-.hint { margin-left: 8px; font-size: 0.8rem; color: #555; }
 
 button, input {
   font: inherit;
@@ -66,13 +62,7 @@ button { padding: 2px 7px; cursor: pointer; }
 button:active { border-style: inset; }
 input { padding: 2px 4px; background: #fff; }
 
-kbd, code, pre { font-family: "Courier New", Courier, monospace; }
-kbd {
-  padding: 0 3px;
-  border: 1px solid #999;
-  background: #eee;
-  font-size: 0.78rem;
-}
+code, pre { font-family: "Courier New", Courier, monospace; }
 
 h2 {
   margin: 26px 0 8px;
@@ -84,8 +74,6 @@ h3 { margin: 20px 0 8px; }
 p { margin: 8px 0 12px; }
 ul, ol { margin-top: 7px; padding-left: 30px; }
 li { margin: 4px 0; }
-.questions li { margin: 8px 0; }
-.questions small { margin-left: 5px; color: #555; white-space: nowrap; }
 
 .file-tree,
 .file-tree ul {
@@ -101,19 +89,9 @@ li { margin: 4px 0; }
 .file-tree ul li { margin: 2px 0; padding-left: 22px; text-indent: -22px; }
 .file-tree ul li::before { content: "├─ "; color: #777; }
 .file-tree ul li:last-child::before { content: "└─ "; }
-.file-tree small { color: #555; }
-
-blockquote {
-  margin: 18px 0;
-  padding: 4px 18px;
-  border-left: 4px solid #a31f34;
-  color: #333;
-}
 
 .question-page > h2 { font-size: 1.4rem; }
-.question-actions button { margin: 2px 5px 2px 0; }
 .pager { margin: 28px 0 4px; text-align: center; }
-[hidden] { display: none !important; }
 
 .markdown-body { overflow-wrap: anywhere; }
 .markdown-body h1 { font-size: 1.55rem; }
@@ -136,30 +114,15 @@ blockquote {
 table { border-collapse: collapse; width: 100%; margin: 15px 0; }
 th, td { padding: 5px 8px; border: 1px solid #777; text-align: left; }
 th { background: #eee; }
-progress { width: 220px; max-width: 100%; accent-color: #a31f34; }
 
 footer { font-size: 0.85rem; }
 .updated { color: #555; }
-.notice {
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  margin: 0;
-  padding: 5px 9px;
-  border: 1px solid #000;
-  background: #ffffcc;
-  font-size: 0.82rem;
-}
 
 @media (max-width: 600px) {
   html { font-size: 17px; }
   .page { width: min(100% - 22px, 900px); margin-top: 12px; }
-  .site-header nav { line-height: 1.9; }
   .search label { display: block; }
   .search input { width: 72%; max-width: none; }
-  .hint { display: none; }
-  .questions { padding-left: 24px; }
-  .questions small { display: block; margin-left: 0; }
   .file-tree { font-size: 0.88rem; }
   .file-tree ul { padding-left: 12px; }
   table { font-size: 0.88rem; }
@@ -167,7 +130,7 @@ footer { font-size: 0.85rem; }
 }
 
 @media print {
-  .search, .site-header nav, .question-actions, .pager, .notice { display: none !important; }
+  .search, .pager { display: none !important; }
   .page { width: 100%; margin: 0; }
   a { color: #000; }
 }
