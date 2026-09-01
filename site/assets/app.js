@@ -81,31 +81,13 @@ function questionList(questions) {
 }
 
 function renderHome() {
-  const mastered = masteredCount();
-  const viewed = Object.keys(state.study.views).filter((id) => state.byId.has(id)).length;
-  const resume = state.byId.get(state.study.lastViewed) || state.questions.find((question) => state.study.mastery[question.id] !== 'mastered') || state.questions[0];
-
   main.innerHTML = `
-    <h2>About these notes</h2>
-    <p>这不是完整的“大模型百科全书”，而是一份有意缩减的面试复习提纲。题目集中在 Agent、RAG、评估、推理部署以及回答项目经历时最常被追问的工程判断。</p>
-    <p><strong>使用方法：</strong>点击题目后先口述 30–90 秒，再显示答案核对。不要逐字背诵，优先记住定义、机制、权衡和落地经验。</p>
-
-    <h2>Start here</h2>
-    <ul>
-      <li><a href="#/question/${resume.id}" data-question="${resume.id}">继续上次：${escapeHtml(resume.title)}</a></li>
-      <li><a href="#/random" data-action="random-question">随机抽取一道题</a></li>
-      <li><a href="#/library" data-filter="unmastered">只看尚未掌握的题目</a></li>
-    </ul>
-    <p>当前进度：已浏览 ${viewed} / ${state.data.total}，已掌握 ${mastered} / ${state.data.total}。<a href="#/progress">查看分章节进度</a></p>
-
-    <h2>Contents</h2>
-    <ol class="contents">${state.data.sections.map((section, index) => {
+    <ul class="file-tree">${state.data.sections.map((section) => {
       const questions = state.questions.filter((question) => question.section === section.name);
-      return `<li><a href="#/library" data-section="${escapeHtml(section.name)}">${index + 1}. ${escapeHtml(section.name)}</a> — ${section.count} 题，已掌握 ${masteredCount(questions)} 题</li>`;
-    }).join('')}</ol>
-
-    <h2>Keyboard shortcuts</h2>
-    <p><kbd>/</kbd> 搜索；<kbd>Space</kbd> 显示答案；<kbd>←</kbd>/<kbd>→</kbd> 上一题/下一题；<kbd>M</kbd> 标记掌握；<kbd>S</kbd> 收藏；<kbd>R</kbd> 随机题。</p>
+      return `<li class="tree-directory"><strong>${escapeHtml(section.name)}/</strong>
+        <ul>${questions.map((question) => `<li><a href="#/question/${question.id}" data-question="${question.id}">${question.id} — ${escapeHtml(question.title)}</a>${statusText(question) ? ` <small>${escapeHtml(statusText(question))}</small>` : ''}</li>`).join('')}</ul>
+      </li>`;
+    }).join('')}</ul>
   `;
 }
 

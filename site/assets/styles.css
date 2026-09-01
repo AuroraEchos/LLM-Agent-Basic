@@ -83,9 +83,23 @@ h3 { margin: 20px 0 8px; }
 p { margin: 8px 0 12px; }
 ul, ol { margin-top: 7px; padding-left: 30px; }
 li { margin: 4px 0; }
-.contents li { margin: 7px 0; }
 .questions li { margin: 8px 0; }
 .questions small { margin-left: 5px; color: #555; white-space: nowrap; }
+
+.file-tree,
+.file-tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.file-tree { font-family: "Courier New", Courier, "Songti SC", SimSun, monospace; }
+.file-tree > li { margin: 0 0 14px; }
+.file-tree ul { margin-top: 3px; padding-left: 22px; }
+.file-tree ul li { margin: 2px 0; padding-left: 22px; text-indent: -22px; }
+.file-tree ul li::before { content: "├─ "; color: #777; }
+.file-tree ul li:last-child::before { content: "└─ "; }
+.file-tree small { color: #555; }
 
 blockquote {
   margin: 18px 0;
@@ -144,6 +158,8 @@ footer { font-size: 0.85rem; }
   .hint { display: none; }
   .questions { padding-left: 24px; }
   .questions small { display: block; margin-left: 0; }
+  .file-tree { font-size: 0.88rem; }
+  .file-tree ul { padding-left: 12px; }
   table { font-size: 0.88rem; }
   th, td { padding: 4px; }
 }
