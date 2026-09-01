@@ -1,6 +1,6 @@
 # LLM-Agent-Basic
 
-面向 LLM / Agent 岗位的核心面试知识库，共 120 题。
+面向 LLM / Agent 岗位的核心基础面试知识库，共 112 题。
 
 ## 在线背题
 

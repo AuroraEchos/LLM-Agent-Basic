@@ -3,11 +3,11 @@
 
 > 点击问题即可进入对应的答案笔记。填写“我的答案”后，下一次生成索引时会自动勾选。
 
-当前进度：**120 / 120**
+当前进度：**112 / 112**
 
 ## 题库导航
 
-- [LLM 与 Agent 核心面试题](#bank-1)（120 题）
+- [LLM 与 Agent 核心面试题](#bank-1)（112 题）
 
 <a id="bank-1"></a>
 ## LLM 与 Agent 核心面试题
@@ -15,17 +15,6 @@
 题目来源：[CORE_INTERVIEW_QUESTIONS.md](CORE_INTERVIEW_QUESTIONS.md)
 
 <a id="bank-1-section-1"></a>
-### 项目与简历深挖
-
-- [x] [EXP-001 · 请用三分钟介绍一个你最有代表性的 LLM 或 Agent 项目，并说明你的个人贡献。](answers/exp/EXP-001.md)
-- [x] [EXP-002 · 这个项目解决了什么业务问题，为什么需要使用大模型而不是传统方案？](answers/exp/EXP-002.md)
-- [x] [EXP-003 · 项目的离线指标、在线指标和最终业务收益分别是什么？](answers/exp/EXP-003.md)
-- [x] [EXP-004 · 你如何设计项目的基线方案，并证明后续优化确实有效？](answers/exp/EXP-004.md)
-- [x] [EXP-005 · 项目中最困难的问题是什么，你如何定位根因并完成验证？](answers/exp/EXP-005.md)
-- [x] [EXP-006 · 你做过哪些失败的尝试，失败原因是什么？](answers/exp/EXP-006.md)
-- [x] [EXP-010 · 你的方案在延迟、吞吐、质量和成本之间做了哪些权衡？](answers/exp/EXP-010.md)
-- [x] [EXP-012 · 线上出现模型效果退化时，你会按照什么顺序排查？](answers/exp/EXP-012.md)
-<a id="bank-1-section-2"></a>
 ### LLM 与 Transformer 基础
 
 - [x] [ARC-001 · 请完整描述原始 Transformer 的 Encoder、Decoder 及其数据流。](answers/arc/ARC-001.md)
@@ -43,7 +32,7 @@
 - [x] [ARC-029 · 如何估算一个 Decoder-Only Transformer 的参数量？](answers/arc/ARC-029.md)
 - [x] [DAT-001 · 请描述 BPE 的训练过程和对新文本的编码过程。](answers/dat/DAT-001.md)
 - [x] [DAT-002 · BPE、Byte-Level BPE、WordPiece、Unigram 和 SentencePiece 有什么区别？](answers/dat/DAT-002.md)
-<a id="bank-1-section-3"></a>
+<a id="bank-1-section-2"></a>
 ### 训练、微调与对齐
 
 - [x] [OPT-001 · Decoder-Only LLM 的 Next-Token Prediction 损失如何计算？](answers/opt/OPT-001.md)
@@ -61,7 +50,7 @@
 - [x] [FT-008 · LoRA 的低秩假设是什么，前向计算与参数量如何推导？](answers/ft/FT-008.md)
 - [x] [ALN-001 · 经典 RLHF 的 SFT、Reward Model 和 Policy Optimization 三个阶段如何衔接？](answers/aln/ALN-001.md)
 - [x] [ALN-010 · DPO 如何从 KL 正则化的 RL 目标推导出直接偏好损失？](answers/aln/ALN-010.md)
-<a id="bank-1-section-4"></a>
+<a id="bank-1-section-3"></a>
 ### 推理与部署
 
 - [x] [INF-001 · Prefill 与 Decode 两个阶段的计算特征和性能瓶颈有什么不同？](answers/inf/INF-001.md)
@@ -76,7 +65,7 @@
 - [x] [DEP-001 · 模型量化的基本目标是什么，Weight、Activation 和 KV Cache 量化有何区别？](answers/dep/DEP-001.md)
 - [x] [DEP-016 · vLLM、TensorRT-LLM、SGLang、llama.cpp 和 DeepSpeed-Inference 如何选型？](answers/dep/DEP-016.md)
 - [x] [DEP-021 · 如何针对吞吐优先、延迟优先和成本优先三种目标选择部署方案？](answers/dep/DEP-021.md)
-<a id="bank-1-section-5"></a>
+<a id="bank-1-section-4"></a>
 ### RAG 与知识系统
 
 - [x] [RAG-001 · RAG 的离线索引和在线查询全链路分别包含哪些阶段？](answers/rag/RAG-001.md)
@@ -95,7 +84,7 @@
 - [x] [RAG-022 · 如何区分检索失败、重排失败、上下文构造失败和生成失败？](answers/rag/RAG-022.md)
 - [x] [RAG-026 · 多租户 RAG 如何实现权限过滤、数据隔离和审计？](answers/rag/RAG-026.md)
 - [x] [RAG-028 · RAG 系统如何抵御文档中的 Prompt Injection 与数据投毒？](answers/rag/RAG-028.md)
-<a id="bank-1-section-6"></a>
+<a id="bank-1-section-5"></a>
 ### Agent、工具与上下文工程
 
 - [x] [AGT-001 · LLM Agent 的模型、规划、工具、记忆和执行环境分别承担什么职责？](answers/agt/AGT-001.md)
@@ -128,7 +117,7 @@
 - [x] [AGT-044 · Context Rot、Lost in the Middle、指令冲突和历史污染分别如何影响 Agent，应该如何缓解？](answers/agt/AGT-044.md)
 - [x] [AGT-046 · 为什么任务状态不应只存在于对话文本中，如何建立外部状态存储与 Single Source of Truth？](answers/agt/AGT-046.md)
 - [x] [AGT-047 · 如何为系统指令、用户输入、检索文档、网页内容和工具结果建立信任分层，防止间接 Prompt Injection 污染上下文？](answers/agt/AGT-047.md)
-<a id="bank-1-section-7"></a>
+<a id="bank-1-section-6"></a>
 ### 评估、幻觉与安全
 
 - [x] [EVA-002 · 自动 Benchmark、人工评测、LLM-as-Judge 和竞技场评测有何优缺点？](answers/eva/EVA-002.md)
@@ -143,7 +132,7 @@
 - [x] [EVA-017 · 直接 Prompt Injection 与间接 Prompt Injection 有何差异？](answers/eva/EVA-017.md)
 - [x] [EVA-019 · 如何防止工具调用中的权限提升、参数注入和 Confused Deputy 问题？](answers/eva/EVA-019.md)
 - [x] [EVA-028 · 如何建立线上 Bad Case 收集、聚类、归因和闭环修复流程？](answers/eva/EVA-028.md)
-<a id="bank-1-section-8"></a>
+<a id="bank-1-section-7"></a>
 ### 代码与系统设计
 
 - [x] [COD-001 · 使用 PyTorch 手写支持 Mask 的 Scaled Dot-Product Self-Attention。](answers/cod/COD-001.md)
