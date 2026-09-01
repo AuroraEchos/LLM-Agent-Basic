@@ -22,13 +22,14 @@ body {
   margin: 18px auto 40px;
 }
 
-a { color: #0000ee; text-decoration: underline; }
-a:visited { color: #551a8b; }
-a:hover, a:focus { color: #b00020; }
+a,
+a:visited,
+a:hover,
+a:focus { color: #000; text-decoration: underline; }
 
 .site-header h1 {
   margin: 0 0 4px;
-  font-size: clamp(1.8rem, 5vw, 2.45rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   line-height: 1.1;
   font-weight: bold;
 }
@@ -75,7 +76,7 @@ kbd {
 
 h2 {
   margin: 26px 0 8px;
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   line-height: 1.25;
 }
 
@@ -95,6 +96,7 @@ li { margin: 4px 0; }
 
 .file-tree { font-family: "Courier New", Courier, "Songti SC", SimSun, monospace; }
 .file-tree > li { margin: 0 0 14px; }
+.file-tree > li > strong { font-size: 0.92rem; }
 .file-tree ul { margin-top: 3px; padding-left: 22px; }
 .file-tree ul li { margin: 2px 0; padding-left: 22px; text-indent: -22px; }
 .file-tree ul li::before { content: "├─ "; color: #777; }
@@ -108,7 +110,7 @@ blockquote {
   color: #333;
 }
 
-.question-page > h2 { font-size: 1.65rem; }
+.question-page > h2 { font-size: 1.4rem; }
 .question-actions button { margin: 2px 5px 2px 0; }
 .pager { margin: 28px 0 4px; text-align: center; }
 [hidden] { display: none !important; }

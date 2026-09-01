@@ -133,17 +133,17 @@
 - [x] [EVA-019 · 如何防止工具调用中的权限提升、参数注入和 Confused Deputy 问题？](answers/eva/EVA-019.md)
 - [x] [EVA-028 · 如何建立线上 Bad Case 收集、聚类、归因和闭环修复流程？](answers/eva/EVA-028.md)
 <a id="bank-1-section-7"></a>
-### 代码与系统设计
+### 手写代码题
 
 - [x] [COD-001 · 使用 PyTorch 手写支持 Mask 的 Scaled Dot-Product Self-Attention。](answers/cod/COD-001.md)
+- [x] [COD-002 · 使用 PyTorch 手写 Multi-Head Attention，并正确处理张量形状。](answers/cod/COD-002.md)
+- [x] [COD-005 · 手写带 Prefill、增量 Decode 和清理能力的 KV Cache Attention。](answers/cod/COD-005.md)
+- [x] [COD-007 · 手写 RoPE 的频率预计算与旋转应用函数。](answers/cod/COD-007.md)
+- [x] [COD-008 · 手写一个 LoRA Linear Layer，并支持合并与取消合并权重。](answers/cod/COD-008.md)
+- [x] [COD-010 · 手写 Greedy Search、Top-K 与 Top-P Sampling。](answers/cod/COD-010.md)
 - [x] [COD-014 · 手写批量余弦相似度检索并返回 Top-K 文档。](answers/cod/COD-014.md)
-- [x] [CON-008 · 如何为并发工具调用实现超时、取消、结果聚合和部分失败处理？](answers/con/CON-008.md)
-- [x] [OBS-008 · Agent 任务成功率下降时，如何利用 Trace 将问题归因到模型、上下文、工具、环境或状态管理？](answers/obs/OBS-008.md)
-- [x] [SYS-007 · 设计一个企业级 RAG 系统，覆盖索引、查询、权限、引用和评估。](answers/sys/SYS-007.md)
-- [x] [SYS-011 · 设计一个可靠 Agent 系统，覆盖规划、工具、状态、重试、沙箱和观测。](answers/sys/SYS-011.md)
-- [x] [SYS-014 · 设计一个能够执行数小时任务、支持中断恢复和人工审批的 Agent。](answers/sys/SYS-014.md)
-- [x] [SYS-015 · 设计一个安全的代码生成与执行 Agent。](answers/sys/SYS-015.md)
-- [x] [SYS-016 · 设计一个企业内部 MCP 工具平台，覆盖注册、权限、审计和版本治理。](answers/sys/SYS-016.md)
-- [x] [SYS-020 · 设计一个 LLM-as-Judge 评测平台，并控制偏差、成本和可复现性。](answers/sys/SYS-020.md)
-- [x] [SYS-021 · 设计一个模型安全网关，处理越狱、Prompt Injection、敏感数据和过度拒答。](answers/sys/SYS-021.md)
-- [x] [SYS-022 · 设计一个线上 Bad Case 发现、聚类、标注和回归闭环系统。](answers/sys/SYS-022.md)
+- [x] [COD-015 · 手写 BM25，并解释 IDF、文档长度归一化和参数作用。](answers/cod/COD-015.md)
+- [x] [COD-017 · 手写 LayerNorm 与 RMSNorm，并验证和框架实现的一致性。](answers/cod/COD-017.md)
+- [x] [COD-021 · 实现 LRU Cache，并分析时间与空间复杂度。](answers/cod/COD-021.md)
+- [x] [COD-029 · 实现一个线程安全或异步的限流器。](answers/cod/COD-029.md)
+- [x] [COD-030 · 解析流式模型输出，并正确处理增量 UTF-8、JSON 和取消请求。](answers/cod/COD-030.md)
